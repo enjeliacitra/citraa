@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow with Citra - Platform Afiliasi Produk Makeup Berkualitas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFC4D6 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            color: #FFE5EC;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.2);
+            text-align: center;
+        }
+
+        .hero img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            color: #C44569;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-tiktok {
+            background: #000;
+            color: white;
+        }
+
+        .btn-tiktok:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .products-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #C44569;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(255, 107, 157, 0.25);
+        }
+
+        .product-card h3 {
+            color: #FF6B9D;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .product-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #FFE5EC;
+            color: #666;
+        }
+
+        .product-list li:before {
+            content: "✨ ";
+            color: #FF6B9D;
+        }
+
+        .features {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+        }
+
+        .features h3 {
+            color: #C44569;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFF 100%);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            color: #FF6B9D;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+        }
+
+        .contact-section h3 {
+            color: #C44569;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #C44569 0%, #FF6B9D 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>✨ Glow with Citra ✨</h1>
+        <p>Platform Afiliasi Produk Makeup Berkualitas</p>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Temukan Produk Makeup Terbaik untuk Kecantikan Anda</h2>
+            <p>Koleksi lengkap foundation, lipstick, dan skincare pendukung pilihan terbaik untuk tampil glowing setiap hari!</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/6282312649531" class="btn btn-whatsapp" target="_blank">
+                    📱 Konsultasi via WhatsApp
+                </a>
+                <a href="https://www.tiktok.com/@enjelia_citra?_r=1&_t=ZS-91ngLMEEEin" class="btn btn-tiktok" target="_blank">
+                    🎵 Lihat Produk di TikTok
+                </a>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <h2 class="section-title">🛍️ Kategori Produk Kami</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>💄 Foundation</h3>
+                    <ul class="product-list">
+                        <li>Full Coverage Foundation</li>
+                        <li>Dewy Finish Foundation</li>
+                        <li>Matte Foundation</li>
+                        <li>BB & CC Cream</li>
+                        <li>Cushion Foundation</li>
+                        <li>Foundation untuk berbagai jenis kulit</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <h3>💋 Lipstick</h3>
+                    <ul class="product-list">
+                        <li>Matte Lipstick</li>
+                        <li>Velvet Lip Tint</li>
+                        <li>Glossy Lipstick</li>
+                        <li>Lip Cream</li>
+                        <li>Long-lasting Lipstick</li>
+                        <li>Berbagai pilihan warna trendy</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <h3>✨ Skincare Pendukung</h3>
+                    <ul class="product-list">
+                        <li>Cleanser & Face Wash</li>
+                        <li>Toner & Essence</li>
+                        <li>Serum & Ampoule</li>
+                        <li>Moisturizer</li>
+                        <li>Sunscreen</li>
+                        <li>Makeup Primer</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h3>🌟 Mengapa Memilih Glow with Citra?</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Produk Berkualitas</h4>
+                    <p>Semua produk telah terseleksi dan terjamin kualitasnya</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <h4>Konsultasi Gratis</h4>
+                    <p>Dapatkan saran produk sesuai kebutuhan kulitmu via WhatsApp</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <h4>Keranjang TikTok</h4>
+                    <p>Belanja mudah langsung dari keranjang produk TikTok kami</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💖</div>
+                    <h4>Terpercaya</h4>
+                    <p>Platform afiliasi resmi dengan review produk yang jujur</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h3>📞 Hubungi Kami</h3>
+            <p>Butuh rekomendasi produk? Atau ingin tahu lebih lanjut tentang produk tertentu?</p>
+            <p><strong>Konsultasi GRATIS via WhatsApp!</strong></p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6282312649531?text=Halo%20Citra,%20saya%20ingin%20konsultasi%20tentang%20produk%20makeup" class="btn btn-whatsapp" target="_blank">
+                    💬 Chat Sekarang: 082312649531
+                </a>
+            </div>
+            <p style="margin-top: 2rem;">Atau kunjungi keranjang produk kami di TikTok untuk melihat koleksi lengkap dan link pembelian!</p>
+            <div class="cta-buttons">
+                <a href="https://www.tiktok.com/@enjelia_citra?_r=1&_t=ZS-91ngLMEEEin" class="btn btn-tiktok" target="_blank">
+                    🛒 Lihat Keranjang Produk TikTok
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Glow with Citra</strong></p>
+        <p>Platform Afiliasi Produk Makeup Berkualitas</p>
+        <p>© 2024 Glow with Citra. Semua produk dipilih dengan teliti untuk kecantikanmu ✨</p>
+    </footer>
+</body>
+</html>-
